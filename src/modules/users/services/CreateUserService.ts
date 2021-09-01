@@ -14,7 +14,6 @@ export default class CreateUserService {
 
   public async execute({ name, email, password }: UserDTO): Promise<User> {
     const checkUserExists = await this.userRepository.findByEmail(email);
-
     if (checkUserExists) {
       throw new HttpError("User already exists.");
     }
@@ -28,9 +27,11 @@ export default class CreateUserService {
         password: hashedPassword,
       });
 
+      user.password = null as any;
+
       return user;
     } catch (err) {
-      throw new HttpError("error in create user" + err);
+      throw new HttpError("User creation failed." + err);
     }
   }
 

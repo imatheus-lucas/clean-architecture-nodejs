@@ -10,7 +10,7 @@ function genenrateUuid() {
   );
 }
 
-class FakeUsersRepository implements IUserRepository {
+export default class FakeUserRepository implements IUserRepository {
   private users: User[] = [];
 
   public async findById(id: string): Promise<User | undefined> {
@@ -38,5 +38,3 @@ class FakeUsersRepository implements IUserRepository {
     return user;
   }
 }
-
-export default FakeUsersRepository;

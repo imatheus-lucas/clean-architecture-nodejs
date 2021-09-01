@@ -29,7 +29,6 @@ export default class User extends BaseEntity {
 
   @Column({ type: "varchar", length: 255, select: false })
   @MinLength(6, { message: "Password must be at least 6 characters" })
-  @MaxLength(30, { message: "password max length is 30" })
   password: string;
 
   @CreateDateColumn()

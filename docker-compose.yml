@@ -12,3 +12,15 @@ services:
         max-file: "3"
     ports:
       - "5438:5432"
+  tests:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    logging:
+      options:
+        max-size: 10m
+        max-file: "3"
+    ports:
+      - "5437:5432"

@@ -1,12 +1,12 @@
 import HttpError from "@shared/errors/HttpError";
-import FakeUsersRepository from "../repositories/UserRepositoryFake";
+import FakeUserRepository from "../repositories/FakeUserRepository";
 import CreateUserService from "../services/CreateUserService";
 
-let fakeUsersRepository: FakeUsersRepository;
+let fakeUsersRepository: FakeUserRepository;
 let createUserService: CreateUserService;
 describe("CreateUser", () => {
   beforeEach(() => {
-    fakeUsersRepository = new FakeUsersRepository();
+    fakeUsersRepository = new FakeUserRepository();
     createUserService = new CreateUserService(fakeUsersRepository);
   });
 
