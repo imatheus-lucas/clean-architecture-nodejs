@@ -10,6 +10,6 @@ export default new (class UserController {
     const createUserService = container.resolve(CreateUserService);
     const user = await createUserService.execute(data);
 
-    return response.json(user);
+    return response.status(201).json(user);
   }
 })();

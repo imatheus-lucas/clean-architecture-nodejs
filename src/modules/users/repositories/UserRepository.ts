@@ -1,4 +1,4 @@
-import { getRepository, Repository } from "typeorm";
+import { getConnection, getRepository, Repository } from "typeorm";
 import UserDTO from "../infra/dtos/UserDTO";
 import IUserRepository from "../infra/interfaces/IUserRepository";
 import User from "../infra/typeorm/entities/User";

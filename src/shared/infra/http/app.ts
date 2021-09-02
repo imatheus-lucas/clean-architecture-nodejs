@@ -7,7 +7,9 @@ import HttpError from "../../errors/HttpError";
 
 import express, { Response, Request, NextFunction } from "express";
 
-import "@shared/infra/typeorm";
+import { createTypeOrmConnection } from "@shared/infra/typeorm";
+
+createTypeOrmConnection();
 import "@shared/container";
 
 const app = express();
